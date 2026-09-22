@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rayol Med Texnika — Tibbiy Texnikalar</title>
+<meta name="description" content="Rayol Med Texnika — kislorod maskasi, Foley kateteri va tibbiy klipsalar. Andijon shahrida tibbiy mahsulotlar va texnikalar.">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#0077b6">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Rayol Med Texnika — Tibbiy Texnikalar">
+<meta property="og:description" content="Andijondagi Rayol Med Texnika tibbiy mahsulotlari katalogi va aloqa ma'lumotlari.">
+<meta property="og:locale" content="uz_UZ">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "MedicalBusiness",
+  "name": "Rayol Med Texnika",
+  "description": "Tibbiy mahsulotlar va texnikalar yetkazib beruvchi kompaniya.",
+  "telephone": "+998945612161",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Andijon",
+    "streetAddress": "Yuksalish kochasi 43-uy",
+    "addressCountry": "UZ"
+  },
+  "sameAs": ["https://t.me/Andijon_Ijara_uylari01"]
+}
+</script>
+<script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+<script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Arial, sans-serif; }
+  html { scroll-behavior: smooth; }
+  body { background: #f8f9fa; color: #333; overflow-x: hidden; }
+  a { text-decoration: none; color: inherit; }
+  ul { list-style: none; }
+
+  /* NAVBAR */
+  .navbar-header { background: #fff; box-shadow: 0 2px 10px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 100; }
+  .navbar-container { max-width: 1200px; margin: auto; display: flex; justify-content: space-between; align-items: center; padding: 15px 20px; }
+  .logo { font-size: 24px; font-weight: bold; color: #0077b6; }
+  .logo span { color: #00b4d8; }
+  nav ul { display: flex; gap: 25px; }
+  nav a { color: #333; font-weight: 500; transition: 0.3s; }
+  nav a:hover { color: #0077b6; }
+  .burger { display: none; background: none; border: none; font-size: 26px; cursor: pointer; color: #0077b6; }
+
+  /* HERO */
+  .hero { background: linear-gradient(135deg, #0077b6 0%, #00b4d8 100%); color: #fff; padding: 80px 20px; min-height: 500px; display: flex; align-items: center; justify-content: center; }
+  .hero-content { max-width: 1200px; width: 100%; display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
+  .hero-text h1 { font-size: 44px; margin-bottom: 20px; line-height: 1.2; }
+  .hero-text p { font-size: 18px; margin-bottom: 30px; opacity: 0.95; line-height: 1.6; }
+  .hero-buttons { display: flex; gap: 15px; flex-wrap: wrap; }
+  .btn { display: inline-block; padding: 14px 32px; border-radius: 30px; font-weight: bold; transition: 0.3s; cursor: pointer; }
+  .btn-primary { background: #fff; color: #0077b6; }
+  .btn-primary:hover { background: #03045e; color: #fff; }
+  .btn-outline { border: 2px solid #fff; color: #fff; }
+  .btn-outline:hover { background: #fff; color: #0077b6; }
+  .hero-img { text-align: center; font-size: 180px; animation: float 3s ease-in-out infinite; }
+  @keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-20px); } }
+
+  /* SERVICES */
+  .services { padding: 80px 20px; max-width: 1200px; margin: auto; }
+  .services h2 { text-align: center; font-size: 36px; color: #03045e; margin-bottom: 10px; }
+  .subtitle { text-align: center; color: #666; margin-bottom: 50px; }
+  .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
+  .card { background: #fff; padding: 30px; border-radius: 15px; text-align: center; transition: 0.3s; border-top: 4px solid #00b4d8; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
+  .card:hover { transform: translateY(-10px); box-shadow: 0 15px 30px rgba(0,119,182,0.2); }
+  .card .icon { font-size: 50px; margin-bottom: 15px; }
+  .card h3 { color: #0077b6; margin-bottom: 10px; font-size: 20px; }
+  .card p { color: #555; font-size: 15px; line-height: 1.6; }
+
+  /* ABOUT */
+  .about { background: #fff; padding: 80px 20px; }
+  .about-container { max-width: 1200px; margin: auto; display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; }
+  .about-text h2 { font-size: 36px; color: #03045e; margin-bottom: 20px; }
+  .about-text p { color: #555; line-height: 1.8; margin-bottom: 20px; }
+  .about-list { display: flex; flex-direction: column; gap: 10px; }
+  .about-list li { color: #333; font-size: 16px; }
+  .about-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .stat { background: linear-gradient(135deg, #0077b6, #00b4d8); color: #fff; padding: 30px 20px; border-radius: 15px; text-align: center; transition: 0.3s; }
+  .stat:hover { transform: scale(1.05); }
+  .stat h3 { font-size: 32px; margin-bottom: 8px; }
+  .stat p { font-size: 14px; opacity: 0.9; }
+
+  /* CONTACT */
+  .contact { padding: 80px 20px; max-width: 1200px; margin: auto; }
+  .contact h2 { text-align: center; font-size: 36px; color: #03045e; margin-bottom: 10px; }
+  .contact-container { display: grid; grid-template-columns: 1fr 1.2fr; gap: 40px; }
+  .contact-info { display: flex; flex-direction: column; gap: 20px; }
+  .info-item { display: flex; gap: 15px; align-items: center; background: #fff; padding: 20px; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); transition: 0.3s; }
+  .info-item:hover { transform: translateX(5px); box-shadow: 0 8px 20px rgba(0,119,182,0.15); }
+  .info-item span { font-size: 32px; }
+  .info-item h4 { color: #0077b6; margin-bottom: 4px; }
+  .info-item p { color: #555; font-size: 15px; }
+  .contact-form { background: #fff; padding: 30px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); display: flex; flex-direction: column; gap: 15px; }
+  .contact-form input, .contact-form textarea { padding: 14px; border: 2px solid #e0e0e0; border-radius: 10px; font-size: 15px; font-family: inherit; transition: 0.3s; outline: none; }
+  .contact-form input:focus, .contact-form textarea:focus { border-color: #00b4d8; }
+  .contact-form button { background: linear-gradient(135deg, #0077b6, #00b4d8); color: #fff; border: none; padding: 15px; border-radius: 10px; font-size: 16px; font-weight: bold; cursor: pointer; transition: 0.3s; }
+  .contact-form button:hover { opacity: 0.9; transform: translateY(-2px); }
+  .success { color: #16803c; text-align: center; font-weight: bold; line-height: 1.5; }
+
+  /* FOOTER */
+  .footer { background: #03045e; color: #fff; padding: 50px 20px 0; }
+  .footer-content { max-width: 1200px; margin: auto; display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px; padding-bottom: 40px; }
+  .footer-content h3 { color: #00b4d8; margin-bottom: 15px; font-size: 22px; }
+  .footer-content h4 { margin-bottom: 15px; font-size: 16px; }
+  .footer-content p { opacity: 0.8; line-height: 1.6; }
+  .footer-content ul { display: flex; flex-direction: column; gap: 8px; }
+  .footer-content ul a { opacity: 0.8; transition: 0.3s; }
+  .footer-content ul a:hover { opacity: 1; color: #00b4d8; }
+  .footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); padding: 20px; text-align: center; font-size: 14px; opacity: 0.7; }
+
+  /* MOBILE */
+  @media (max-width: 768px) {
+    .burger { display: block; }
+    nav { position: absolute; top: 70px; left: 0; right: 0; background: #fff; max-height: 0; overflow: hidden; transition: 0.3s; }
+    nav.nav-open { max-height: 300px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+    nav ul { flex-direction: column; padding: 20px; gap: 15px; }
+    .hero-content { grid-template-columns: 1fr; text-align: center; }
+    .hero-text h1 { font-size: 30px; }
+    .hero-img { font-size: 100px; }
+    .hero-buttons { justify-content: center; }
+    .about-container { grid-template-columns: 1fr; }
+    .about-text h2 { font-size: 28px; }
+    .contact-container { grid-template-columns: 1fr; }
+    .contact h2, .services h2 { font-size: 28px; }
+    .footer-content { grid-template-columns: 1fr; text-align: center; }
+    .footer-content ul { align-items: center; }
+  }
+</style>
+</head>
+<body>
+<div id="root"></div>
+
+<script type="text/babel">
+const { useState } = React;
+
+/* ============ NAVBAR ============ */
+function Navbar() {
+  const [open, setOpen] = useState(false);
+
+  const navItems = [
+    { href: '#home', label: 'Bosh sahifa' },
+    { href: 'texnikalar.html', label: 'Texnikalar' },
+    { href: '#about', label: 'Biz haqimizda' },
+    { href: '#contact', label: 'Aloqa' },
+  ];
+
+  return (
+    <header className="navbar-header">
+      <div className="navbar-container">
+        <div className="logo">Rayol <span>Med</span> Texnika</div>
+        <nav className={open ? 'nav-open' : ''} aria-expanded={open}>
+          <ul>
+            {navItems.map((item) => (
+              <li key={item.href}>
+                <a href={item.href} onClick={() => setOpen(false)}>{item.label}</a>
+              </li>
+            ))}
+          </ul>
+        </nav>
+        <button
+          type="button"
+          className="burger"
+          aria-label="Mobil menyu"
+          aria-expanded={open}
+          onClick={() => setOpen(!open)}
+        >
+          ☰
+        </button>
+      </div>
+    </header>
+  );
+}
+
+/* ============ HERO ============ */
+function Hero() {
+  return (
+    <section className="hero" id="home">
+      <div className="hero-content">
+        <div className="hero-text">
+          <h1>Zamonaviy Tibbiy Texnikalar</h1>
+          <p>Sog'liqni saqlash muassasalari uchun ishonchli tibbiy mahsulotlar va zamonaviy jihozlar.</p>
+          <div className="hero-buttons">
+            <a href="texnikalar.html" className="btn btn-primary">Batafsil ma'lumot</a>
+            <a href="#contact" className="btn btn-outline">Bog'lanish</a>
+          </div>
+        </div>
+        <div className="hero-img">🏥</div>
+      </div>
+    </section>
+  );
+}
+
+/* ============ ABOUT ============ */
+function About() {
+  return (
+    <section className="about" id="about">
+      <div className="about-container">
+        <div className="about-text">
+          <h2>Biz haqimizda</h2>
+          <p><strong>Rayol Med Texnika</strong> — O'zbekistondagi yetakchi tibbiy texnika yetkazib beruvchi kompaniya. Biz 10 yildan ortiq vaqt davomida sog'liqni saqlash muassasalarini zamonaviy uskunalar bilan ta'minlab kelmoqdamiz.</p>
+          <ul className="about-list">
+            <li>✅ Rasmiy kafolat va servis xizmati</li>
+            <li>✅ Malakali mutaxassislar jamoasi</li>
+            <li>✅ O'rnatish va o'qitish bepul</li>
+            <li>✅ Butun O'zbekiston bo'ylab yetkazib berish</li>
+          </ul>
+        </div>
+        <div className="about-stats">
+          <div className="stat"><h3>500+</h3><p>Yetkazilgan uskuna</p></div>
+          <div className="stat"><h3>150+</h3><p>Hamkor klinikalar</p></div>
+          <div className="stat"><h3>10+</h3><p>Yillik tajriba</p></div>
+          <div className="stat"><h3>24/7</h3><p>Texnik yordam</p></div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ============ CONTACT ============ */
+function Contact() {
+  const [form, setForm] = useState({ name: '', phone: '', message: '' });
+  const [sent, setSent] = useState(false);
+
+  const handleChange = (e) => setForm({ ...form, [e.target.name]: e.target.value });
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    if (!form.name.trim() || !form.phone.trim() || !form.message.trim()) {
+      setSent(false);
+      return;
+    }
+
+    const smsText = `Ism: ${form.name.trim()}\nTelefon: ${form.phone.trim()}\nXabar: ${form.message.trim()}`;
+    const smsLink = document.createElement('a');
+    smsLink.href = `sms:+998945612161?body=${encodeURIComponent(smsText)}`;
+    smsLink.click();
+    setSent(true);
+    setForm({ name: '', phone: '', message: '' });
+    setTimeout(() => setSent(false), 7000);
+  };
+
+  return (
+    <section className="contact" id="contact">
+      <h2>Biz bilan bog'laning</h2>
+      <p className="subtitle">Savollaringiz bormi? Yozing, tez javob beramiz!</p>
+      <div className="contact-container">
+        <div className="contact-info">
+          <div className="info-item"><span>📞</span><div><h4>Telefon</h4><p>+998 94 561 21 61</p></div></div>
+          <div className="info-item"><span>✉️</span><div><h4>Email</h4><p>info@medtech.uz</p></div></div>
+          <div className="info-item"><span>📍</span><div><h4>Manzil</h4><p>Andijon.sh, Yuksalish kochasi 43-uy</p></div></div>
+          <div className="info-item"><span>💬</span><div><h4>Telegram</h4><p><a href="https://t.me/Andijon_Ijara_uylari01" target="_blank" rel="noreferrer">@Andijon_Ijara_uylari01</a></p></div></div>
+        </div>
+        <form className="contact-form" onSubmit={handleSubmit}>
+          <input type="text" name="name" placeholder="Ismingiz" value={form.name} onChange={handleChange} required />
+          <input type="tel" name="phone" placeholder="Telefon raqamingiz" value={form.phone} onChange={handleChange} required />
+          <textarea name="message" placeholder="Xabaringiz..." rows="5" value={form.message} onChange={handleChange} required></textarea>
+          <button type="submit">Yuborish</button>
+          {sent && <p className="success">✅ Telefoningizdagi SMS ilovasi ochilishi kerak. Ochilmasa, saytni telefonda oching.</p>}
+        </form>
+      </div>
+    </section>
+  );
+}
+
+/* ============ FOOTER ============ */
+function Footer() {
+  return (
+    <footer className="footer">
+      <div className="footer-content">
+        <div>
+          <h3>Rayol Med Texnika</h3>
+          <p>Zamonaviy tibbiy texnikalar yetkazib beruvchi kompaniya.</p>
+        </div>
+        <div>
+          <h4>Bo'limlar</h4>
+          <ul>
+            <li><a href="#home">Bosh sahifa</a></li>
+            <li><a href="texnikalar.html">Texnikalar</a></li>
+            <li><a href="#about">Biz haqimizda</a></li>
+            <li><a href="#contact">Aloqa</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Ijtimoiy tarmoqlar</h4>
+          <ul>
+            <li><a href="https://t.me/Andijon_Ijara_uylari01" target="_blank" rel="noreferrer">Telegram</a></li>
+            <li><a href="https://instagram.com/medtech_uz" target="_blank" rel="noreferrer">Instagram</a></li>
+            <li><a href="https://facebook.com/medtechuz" target="_blank" rel="noreferrer">Facebook</a></li>
+            <li><a href="https://youtube.com/@medtech_uz" target="_blank" rel="noreferrer">YouTube</a></li>
+          </ul>
+        </div>
+      </div>
+      <div className="footer-bottom">
+        <p>© 2025 Rayol Med Texnika — Barcha huquqlar himoyalangan</p>
+      </div>
+    </footer>
+  );
+}
+
+/* ============ APP ============ */
+function App() {
+  return (
+    <>
+      <Navbar />
+      <Hero />
+      <About />
+      <Contact />
+      <Footer />
+    </>
+  );
+}
+
+ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+</script>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Qidiruvda chiqadigan sarlavha -->
+  <title>Royal Medtehnika — Tibbiy texnika va uskunalar</title>
+  
+  <!-- Qidiruvda sarlavha ostida chiqadigan qisqa matn -->
+  <meta name="description" content="Royal Medtehnika — sifatli tibbiy texnikalar sotuvi va xizmat ko'rsatish.">
+  
+  <meta name="robots" content="index, follow">
+</head>
+</body>
+</html>

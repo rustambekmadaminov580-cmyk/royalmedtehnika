@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rayol Med Texnika - Mahsulotlar</title>
+  <meta name="description" content="Rayol Med Texnika mahsulotlari: kislorod maskasi, Foley kateteri va tibbiy klipsalar.">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Arial, sans-serif; }
+    body { background: #f5f9fc; color: #1f2937; line-height: 1.6; }
+    a { color: inherit; text-decoration: none; }
+    .topbar { position: sticky; top: 0; z-index: 5; background: #fff; border-bottom: 1px solid #e5e7eb; }
+    .container { width: min(1200px, 100%); margin: auto; padding: 0 20px; }
+    .navbar { min-height: 72px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+    .logo { color: #0a6ebd; font-size: 26px; font-weight: 800; }
+    .logo span { color: #1ec7d6; }
+    nav { display: flex; gap: 22px; font-weight: 600; }
+    nav a:hover { color: #0a6ebd; }
+    .hero { padding: 64px 0; color: #fff; background: linear-gradient(135deg, #0a6ebd, #1ec7d6); }
+    .hero h1 { font-size: clamp(2.2rem, 5vw, 4rem); line-height: 1.1; margin-bottom: 16px; }
+    .hero p { max-width: 680px; font-size: 1.08rem; }
+    .catalog { padding: 70px 0; }
+    .section-title { color: #0b2342; text-align: center; font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 10px; }
+    .subtitle { color: #4b5563; text-align: center; margin: 0 auto 34px; }
+    .search { display: block; width: min(100%, 620px); margin: 0 auto 34px; padding: 15px 18px; border: 1px solid #cbdde5; border-radius: 12px; background: #fff; font: inherit; outline: none; box-shadow: 0 8px 24px rgba(15,23,42,.06); }
+    .search:focus { border-color: #0a6ebd; box-shadow: 0 0 0 3px rgba(10,110,189,.12); }
+    .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
+    .card { background: #fff; padding: 18px; border-radius: 15px; border-top: 4px solid #1ec7d6; box-shadow: 0 8px 25px rgba(15,23,42,.08); }
+    .visual { height: 240px; overflow: hidden; display: flex; align-items: center; justify-content: center; background: #f8fbfc; border: 1px solid #e1edf1; border-radius: 12px; margin-bottom: 16px; }
+    .visual img { display: block; width: 100%; height: 100%; object-fit: contain; }
+    .card h2 { color: #0a6ebd; font-size: 1.35rem; margin-bottom: 8px; }
+    .card p { color: #4b5563; font-size: .97rem; }
+    .empty { display: none; color: #64748b; text-align: center; margin-top: 25px; }
+    footer { padding: 28px 0; color: #fff; background: #031b35; text-align: center; }
+    @media (max-width: 700px) { .navbar { flex-direction: column; justify-content: center; padding: 16px 20px; } nav { flex-wrap: wrap; justify-content: center; } }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="container navbar">
+      <a class="logo" href="deepseek_html_20260922_0a1f5c.html">Rayol <span>Med</span> Texnika</a>
+      <nav aria-label="Asosiy menyu">
+        <a href="deepseek_html_20260922_0a1f5c.html">Bosh sahifa</a>
+        <a href="deepseek_html_20260922_0a1f5c.html#about">Biz haqimizda</a>
+        <a href="deepseek_html_20260922_0a1f5c.html#contact">Aloqa</a>
+      </nav>
+    </div>
+  </header>
+  <section class="hero">
+    <div class="container">
+      <h1>Tibbiy mahsulotlar katalogi</h1>
+      <p>Rayol Med Texnika mahsulotlarini ko'ring va kerakli mahsulotni qidiruv orqali toping.</p>
+    </div>
+  </section>
+  <main class="catalog">
+    <div class="container">
+      <h2 class="section-title">Bizning tibbiy mahsulotlar</h2>
+      <p class="subtitle">Sog'liqni saqlash muassasalari uchun ishonchli va sifatli mahsulotlar.</p>
+      <input id="search" class="search" type="search" placeholder="Mahsulot qidiring..." aria-label="Mahsulot qidirish">
+      <div class="cards">
+        <article class="card" data-search="kislorod maska kislorod maskasi davolash reanimatsiya">
+          <div class="visual"><img src="image copy 2.png" alt="Kislorod maskasi"></div>
+          <h2>Kislorod maska</h2>
+          <p>Yuqori sifatli va ishonchli kislorod maskasi, davolash va reanimatsiya jarayonlari uchun mo'ljallangan.</p>
+        </article>
+        <article class="card" data-search="foley kateter lateks siydik pufagi fiksatsiya">
+          <div class="visual"><img src="image copy.png" alt="Foley kateteri"></div>
+          <h2>Foley kateter</h2>
+          <p>2 yo'lli lateks kateter - siydik pufagi uchun ishonchli va qulay yechim. Barqaror fiksatsiya, turli o'lchamlar va rangli belgilar bilan ishlatiladi.</p>
+        </article>
+        <article class="card" data-search="klipsa klipса tibbiy steril muolaja">
+          <div class="visual"><img src="image.png" alt="Tibbiy klipsa"></div>
+          <h2>Клипса</h2>
+          <p>Tibbiy muolajalar uchun steril, qulay va ishonchli bir martalik klipsalar.</p>
+        </article>
+      </div>
+      <p id="empty" class="empty">Bu so'rov bo'yicha mahsulot topilmadi.</p>
+    </div>
+  </main>
+  <footer><div class="container">© 2025 Rayol Med Texnika - Barcha huquqlar himoyalangan</div></footer>
+  <script>
+    const input = document.getElementById('search');
+    const cards = [...document.querySelectorAll('.card')];
+    const empty = document.getElementById('empty');
+    input.addEventListener('input', () => {
+      const query = input.value.trim().toLowerCase();
+      let count = 0;
+      cards.forEach((card) => {
+        const visible = card.dataset.search.includes(query);
+        card.hidden = !visible;
+        if (visible) count += 1;
+      });
+      empty.style.display = count ? 'none' : 'block';
+    });
+  </script>
+</body>
+</html>
